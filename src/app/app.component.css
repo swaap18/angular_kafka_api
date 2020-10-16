@@ -1,3 +1,9 @@
 table{
     width:100%
 }
+
+.error{
+    color:black;
+    text-align: center;
+    background-color:red;
+  }

@@ -18,29 +18,29 @@
               <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Client Id</mat-label>
-                  <input type="text" matInput placeholder="" formControlName="clientId">
+                  <input type="text" matInput placeholder="" [(ngModel)]="message[0]" formControlName="clientId">
                   <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
               </td>
               <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Loan Number</mat-label>
-                  <input type="text" matInput placeholder="" formControlName="loanId">
+                  <input type="text" matInput placeholder=""  [(ngModel)]="message[1]" formControlName="loanId">
                   <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
               </td>
-              <td>
+              <!-- <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Borrower Name</mat-label>
                   <input type="text" matInput placeholder="" formControlName="bname">
-                  <!-- <mat-hint>Hint</mat-hint> -->
+                 
                 </mat-form-field>
-              </td>
+              </td> -->
             </tr>
           </table>
         </div>
         <div class="button-row">
-          <button mat-flat-button color="primary" type="submit" style="margin:5px">Search</button>
+          <!-- <button mat-flat-button color="primary" type="submit" style="margin:5px">Search</button> -->
                    
           <button mat-flat-button color="primary" type="reset" (click)='resetOnClick()' style="margin:5px">Reset</button>
         </div>
@@ -62,17 +62,17 @@
               
               <ng-container matColumnDef="ClientId">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> ClientId </th>
-                <td mat-cell *matCellDef="let element">{{element[0]}}</td>
+                <td mat-cell *matCellDef="let element">{{element.clientId}}</td>
               </ng-container>
       
               <ng-container matColumnDef="Loan Number">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Loan No</th>
-                <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.loanno}} </td>
               </ng-container>
       
               <ng-container matColumnDef="Borrower Name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Borrower Name </th>
-                <td mat-cell *matCellDef="let element"> {{element[2]}}  </td>
+                <td mat-cell *matCellDef="let element"> {{element.bname}}  </td>
               </ng-container>
       
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -84,4 +84,5 @@
           </div>
         </mat-card-content>
       </mat-card>
-      
+      <div *ngIf="error!=null" class="error"><h2>{{error}}</h2>
+      </div>

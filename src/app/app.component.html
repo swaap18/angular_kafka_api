@@ -11,21 +11,23 @@
 <mat-card>
     <mat-card-title>Search</mat-card-title>
     <mat-card-content>
-      <form  [formGroup]="form" (ngSubmit)="submit()">
+      <!-- <button mat-flat-button (click)="connect()" class="btn btn-default" type="submit">Connect</button>
+      <button mat-flat-button (click)="disconnect()" class="btn btn-default" type="submit" disabled="disabled">Disconnect</button> -->
+      <form  [formGroup]="form" (ngSubmit)="submit()" >
         <div>
           <table class="example-full-width" cellspacing="0">
             <tr>
               <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Client Id</mat-label>
-                  <input type="text" matInput placeholder="" [(ngModel)]="message[0]" formControlName="clientId">
+                  <input type="text" matInput placeholder="" name="clientId" [(ngModel)]="a" formControlName="clientId">
                   <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
               </td>
               <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Loan Number</mat-label>
-                  <input type="text" matInput placeholder=""  [(ngModel)]="message[1]" formControlName="loanId">
+                  <input type="text" matInput placeholder="" name="loanId" [ngModel]="b" formControlName="loanId">
                   <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
               </td>
@@ -48,9 +50,6 @@
       </form>
     </mat-card-content>
     </mat-card>
-
-
-
 
 
     <mat-card *ngIf="dataSource.data.length">
@@ -82,6 +81,7 @@
             <!-- Angular 8 pagination -->
             <!-- <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator> -->
           </div>
+          
         </mat-card-content>
       </mat-card>
       <div *ngIf="error!=null" class="error"><h2>{{error}}</h2>

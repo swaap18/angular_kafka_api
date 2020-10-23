@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
         elements2 = elements.filter(res => res.clientId=== parseInt(this.message[0]));
         console.log("clientid "+this.message[0]+" data  "+elements2);
       }
-      if (this.message[1]!=null) {
+      if (this.message[1]!='') {
         flag = 1;
         elements2 = elements2.filter(res => res.loanno === parseInt(this.message[1]));
         console.log("loanid "+this.message[1]+" data  "+elements2);
@@ -137,17 +137,21 @@ export class AppComponent implements OnInit {
 
    var data=message;
     var arr=[];
-          this.val=data;
-          var str=this.val.split(" ");
-          console.log("string"+str);
-          arr=this.val.split(",");
+          this.val=JSON.parse(message);
+          //var str=this.val.split(" ");
+          //console.log("string"+str);
+         // arr=this.val.split(",");
          // this.messages.push(this.val);
-          this.messages.push(arr);
-          this.message=str;
-          console.log(str[0]+"ff"+str[1]);
-         console.log(this.val+"arr"+arr);
-         this.a=str[0];
-         this.b=str[1];
+         // this.messages.push(arr);
+         // this.message=str;
+         // console.log(str[0]+"ff"+str[1]);
+         //console.log(this.val+"arr"+arr);
+         //this.a=str[0];
+        // this.b=str[1];
+        this.a=this.val["clientId"];
+        this.b=this.val["loanNumber"];
+        this.message[0]=this.a;
+        this.message[1]=this.b;
         console.log(this.form.value+" a"+this.a+this.b);
          //this.dataSource = new MatTableDataSource<any[]>(this.messages);
             this.search();

@@ -141,22 +141,25 @@ export class AppComponent implements OnInit {
 
    var data=message;
     var arr=[];
-          this.val=JSON.parse(message);
-          //var str=this.val.split(" ");
-          //console.log("string"+str);
+         // this.val=JSON.parse(message);
+          var str=data.split(" ");
+          console.log("string"+str);
          // arr=this.val.split(",");
          // this.messages.push(this.val);
          // this.messages.push(arr);
-         // this.message=str;
+          this.message[0]=str[0]; this.message[1]=str[1];
          // console.log(str[0]+"ff"+str[1]);
          //console.log(this.val+"arr"+arr);
-         //this.a=str[0];
-        // this.b=str[1];
-        this.a=this.val["clientId"];
-        this.b=this.val["loanNumber"];
-        this.message[0]=this.a;
-        this.message[1]=this.b;
-        console.log(this.form.value+" a"+this.a+this.b);
+         this.a=str[0];
+         this.b=str[1];
+
+        // this.a=this.val["clientId"];
+        // this.b=this.val["loanNumber"];
+        // this.message[0]=this.a;
+        // this.message[1]=this.b;
+        // console.log(this.form.value+" a"+this.a+this.b);
+
+
          //this.dataSource = new MatTableDataSource<any[]>(this.messages);
             this.search();
     

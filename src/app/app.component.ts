@@ -44,7 +44,10 @@ export class AppComponent implements OnInit {
           {"clientId":108,"loanno":134,"bname":"rudra"},
           {"clientId":108,"loanno":234,"bname":"shiva"},
           {"clientId":12083,"loanno":121212,"bname":"jasmin"}
-        ]
+        
+          {"clientId":12083,"loanno":121212,"bname":"Smith"},
+          {"clientId":12083,"loanno":131313,"bname":"Steve"},
+          {"clientId":12083,"loanno":141414,"bname":"John"}]
   displayedColumns: string[] = ['ClientId', 'Loan Number', 'Borrower Name'];
   dataSource = new MatTableDataSource<any[]>();
   constructor(){

@@ -43,7 +43,6 @@ export class AppComponent implements OnInit {
           {"clientId":107,"loanno":234,"bname":"swapnil"},
           {"clientId":108,"loanno":134,"bname":"rudra"},
           {"clientId":108,"loanno":234,"bname":"shiva"},
-          {"clientId":12083,"loanno":121212,"bname":"jasmin"}
         
           {"clientId":12083,"loanno":121212,"bname":"Smith"},
           {"clientId":12083,"loanno":131313,"bname":"Steve"},
